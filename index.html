@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17365D"><title>Caja Bingo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div><h1>🎟️ Caja Bingo</h1><p>Control de ventas y canjes</p></div><button id="adminBtn" class="ghost">📊 Administración</button></header>
+<main>
+<section id="home" class="screen">
+  <div class="hero"><h2>Selecciona una caja</h2><p>Cualquier celular puede entrar a cualquiera de las dos.</p></div>
+  <div class="box-select">
+    <button class="box-card" data-box="1"><span>🟦</span><b>Caja 1</b><small>Comida + Bingos</small></button>
+    <button class="box-card" data-box="2"><span>🟩</span><b>Caja 2</b><small>Bingos + Canjes</small></button>
+  </div>
+</section>
+
+<section id="cashier" class="screen hidden">
+  <div class="cashier-head"><button id="backBtn" class="ghost">← Cajas</button><div><h2 id="boxTitle"></h2><p id="boxSubtitle"></p></div></div>
+  <div id="payment" class="payment"><button class="pay active" data-pay="Efectivo">💵 Efectivo</button><button class="pay" data-pay="Tarjeta">💳 Tarjeta</button></div>
+  <div id="menu" class="menu"></div>
+  <div id="cart" class="cart"></div>
+  <div class="checkout"><strong id="cartTotal">$0</strong><button id="sellBtn" disabled>Registrar venta</button></div>
+  <div id="canje" class="canje hidden">
+    <h3>🎁 Canje de bingo</h3><p>Registra el canje del cartón.</p>
+    <input id="canjeCode" placeholder="Número o código del cartón">
+    <button id="canjeBtn">Registrar canje</button>
+  </div>
+</section>
+
+<section id="admin" class="screen hidden">
+  <div class="cashier-head"><button id="adminBack" class="ghost">← Cajas</button><div><h2>📊 Administración</h2><p>Resumen compartido</p></div></div>
+  <div class="stats" id="stats"></div>
+  <div class="admin-grid"><div class="card"><h3>Ventas por producto</h3><div id="productsStats"></div></div><div class="card"><h3>Últimos movimientos</h3><div id="movements"></div></div></div>
+</section>
+</main>
+<div id="toast"></div>
+<script type="module" src="app.js"></script>
+</body></html>
